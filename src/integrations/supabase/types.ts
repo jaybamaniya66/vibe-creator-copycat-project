@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      avatars: {
+        Row: {
+          created_at: string
+          id: string
+          image_url: string
+          name: string
+          type: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          image_url: string
+          name: string
+          type?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          image_url?: string
+          name?: string
+          type?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       client: {
         Row: {
           created_at: string
@@ -29,6 +56,81 @@ export type Database = {
           created_at?: string
           id?: number
           name?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          subscription_status: string | null
+          subscription_tier: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id?: string
+          subscription_status?: string | null
+          subscription_tier?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          subscription_status?: string | null
+          subscription_tier?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      videos: {
+        Row: {
+          avatar_id: string | null
+          created_at: string
+          id: string
+          script: string
+          status: string | null
+          thumbnail_url: string | null
+          title: string
+          updated_at: string
+          user_id: string
+          video_url: string | null
+        }
+        Insert: {
+          avatar_id?: string | null
+          created_at?: string
+          id?: string
+          script: string
+          status?: string | null
+          thumbnail_url?: string | null
+          title: string
+          updated_at?: string
+          user_id: string
+          video_url?: string | null
+        }
+        Update: {
+          avatar_id?: string | null
+          created_at?: string
+          id?: string
+          script?: string
+          status?: string | null
+          thumbnail_url?: string | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+          video_url?: string | null
         }
         Relationships: []
       }
